@@ -30,6 +30,9 @@ module.exports = [
 ];
 ```
 
+All the `import(...)` expressions within the "proxy" bundle in the example above
+will be replaced with `Promise.resolve(...)`.
+
 ## Related Projects
 
 - [Node.js API Starter](https://github.com/kriasoft/nodejs-api-starter) - Monorepo project template based on Yarn v2, GraphQL.js, React, and Relay.

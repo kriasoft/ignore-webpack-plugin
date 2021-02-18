@@ -1,6 +1,16 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    ".gitignore": true,
+    ".npmignore": true,
+    ".pnp.js": true,
+    ".yarn": true,
+    ".yarnrc.yml": true,
+    "yarn.lock": true
+  },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true

@@ -1,11 +1,10 @@
 {
   "name": "ignore-webpack-plugin",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Excludes dynamically imported dependencies from the output bundle.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc index.js --declaration --allowJs --emitDeclarationOnly --outFile types.d.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "kriasoft/ignore-webpack-plugin",
   "keywords": [
