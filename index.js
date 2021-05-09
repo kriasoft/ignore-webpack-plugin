@@ -1,6 +1,5 @@
-/**
- * @copyright 2021-present Kriasoft (https://git.io/JtoKE)
- */
+/* SPDX-FileCopyrightText: 2021-present Kriasoft <hello@kriasoft.com> */
+/* SPDX-License-Identifier: MIT */
 
 const IgnoreAsyncImportsPlugin = require("./IgnoreAsyncImportsPlugin");
 

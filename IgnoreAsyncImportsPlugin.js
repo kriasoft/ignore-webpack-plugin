@@ -1,9 +1,5 @@
-/**
- * @copyright 2021-present Kriasoft (https://git.io/JtoKE)
- *
- * @typedef {import("webpack").Compiler} Compiler
- * @typedef {import("webpack").javascript.JavascriptParser} JavascriptParser
- */
+/* SPDX-FileCopyrightText: 2021-present Kriasoft <hello@kriasoft.com> */
+/* SPDX-License-Identifier: MIT */
 
 const path = require("path");
 const webpack = require("webpack");
@@ -11,6 +7,9 @@ const ImportDependency = require("./ImportDependency");
 
 /**
  * Excludes dynamically imported dependencies from the output bundle.
+ *
+ * @typedef {import("webpack").Compiler} Compiler
+ * @typedef {import("webpack").javascript.JavascriptParser} JavascriptParser
  */
 class IgnoreAsyncImportsPlugin {
   /**
@@ -67,7 +66,7 @@ class IgnoreAsyncImportsPlugin {
       const dep = new ImportDependency(expr.source.value, expr.range);
       dep.loc = expr.loc;
       parser.state.module.addDependency(dep);
-      return true;
+      return false;
     });
   }
 }
