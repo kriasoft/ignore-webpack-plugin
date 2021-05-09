@@ -1,12 +1,11 @@
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Florent Cailhol @ooflorent
-*/
+/* SPDX-FileCopyrightText: 2021-present Kriasoft <hello@kriasoft.com> */
+/* SPDX-License-Identifier: MIT */
 
 "use strict";
 
 const InitFragment = require("webpack/lib/InitFragment");
-const ModuleDependency = require("webpack/lib/dependencies/ModuleDependency");
+const Dependency = require("webpack/lib/Dependency");
+const DependencyTemplate = require("webpack/lib/DependencyTemplate");
 
 /** @typedef {import("webpack").sources.ReplaceSource} ReplaceSource */
 /** @typedef {import("webpack").ChunkGraph} ChunkGraph */
@@ -14,9 +13,10 @@ const ModuleDependency = require("webpack/lib/dependencies/ModuleDependency");
 /** @typedef {import("webpack").Dependency.UpdateHashContext} UpdateHashContext */
 /** @typedef {import("webpack").util.Hash} Hash */
 
-class ImportDependency extends ModuleDependency {
+class ImportDependency extends Dependency {
   constructor(request, range) {
-    super(request);
+    super();
+    this.request = request;
     this.range = range;
   }
 
@@ -41,7 +41,6 @@ class ImportDependency extends ModuleDependency {
   serialize(context) {
     const { write } = context;
     write(this.request);
-    write(this.userRequest);
     write(this.range);
     super.serialize(context);
   }
@@ -49,13 +48,12 @@ class ImportDependency extends ModuleDependency {
   deserialize(context) {
     const { read } = context;
     this.request = read();
-    this.userRequest = read();
     this.range = read();
     super.deserialize(context);
   }
 }
 
-class ImportDependencyTemplate extends ModuleDependency.Template {
+class ImportDependencyTemplate extends DependencyTemplate {
   /**
    * @param {Dependency} dependency the dependency for which the template should be applied
    * @param {ReplaceSource} source the current replace source which can be modified

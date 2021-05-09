@@ -1,6 +1,7 @@
 .github
 .vscode
 .yarn
+test
 .yarnrc.yml
 .pnp.js
 yarn.lock

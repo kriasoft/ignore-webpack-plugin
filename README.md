@@ -35,7 +35,8 @@ will be replaced with `Promise.resolve(...)`.
 
 ## Related Projects
 
-- [Node.js API Starter](https://github.com/kriasoft/nodejs-api-starter) - Monorepo project template based on Yarn v2, GraphQL.js, React, and Relay.
+- [GraphQL API and Relay Starter Kit](https://github.com/kriasoft/graphql-starter) - Monorepo template pre-configured with GraphQL API, React, and Relay.
+- [Node.js API Starter Kit](https://github.com/kriasoft/node-starter-kit) - Project template pre-configured with PostgreSQL, OAuth, emails, and unit tests.
 
 ## Copyright
 
